@@ -28,3 +28,33 @@ towerfallDataTruncated = {
   "mason" : [69,7,3]
 }
 
+towerfallGlobalData = {
+  "game_count": {
+    "monday" : 22,
+    "tuesday" : 22,
+    "wednesday" : 35,
+    "thursday" : 4,
+    "friday" : 64,
+    "saturday" : 32,
+    "sunday" : 23
+  },
+  "player_count": {
+    "monday" : 32,
+    "tuesday" : 65,
+    "wednesday" : 11,
+    "thursday" : 41,
+    "friday" : 61,
+    "saturday" : 91,
+    "sunday" : 1
+  },
+  "dead_controllers": {
+    "monday" : 4,
+    "tuesday" : 2,
+    "wednesday" : 3,
+    "thursday" : 4,
+    "friday" : 4,
+    "saturday" : 2,
+    "sunday" : 2
+  }
+}
+
