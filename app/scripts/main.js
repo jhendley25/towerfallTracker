@@ -1,7 +1,8 @@
 $(function(){
 	console.log('this shit is ready!!!')
 	// stickEmIn(towerfallDataByUser);
-	stickEmInWithUnderscore(towerfallDataTruncated);
+	// stickEmInWithUnderscore(towerfallDataTruncated);
+	console.log(totalGamesPlayed());
 
 })
 
@@ -23,4 +24,9 @@ function stickEmInWithUnderscore(arg) {
 	_.each(arg, function(data){
 		$('.wins').append('<li>' + data[0] + '</li>');
 	})
+}
+
+function totalGamesPlayed(){
+	var totalGames =  _.reduce(_.map(towerfallGlobalData.game_count, function(value, key){return value;}), function(memo, num){return memo + num;})
+	
 }
