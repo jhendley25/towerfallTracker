@@ -1,6 +1,26 @@
 $(function(){
 	console.log('this shit is ready!!!')
+	// stickEmIn(towerfallDataByUser);
+	stickEmInWithUnderscore(towerfallDataTruncated);
 
-$('.user-list ul').append('<li>' + towerfallDataByUser.user1.name + '</li>');
 })
 
+function stickEmIn(data){
+// using underscore to foreach over data nested in an object, referenced in global-data.js
+	_.each(data, function(user){
+ 		$('.user-list').append('<li>' + user.name + '</li>');
+ 		$('.wins').append('<li>' + user.wins + '</li>');
+	});
+}
+
+function stickEmInWithUnderscore(arg) {
+// using _.each + _.keys to get the property names of the obj, and inject into the DOM
+	_.each(_.keys(arg), function(user){
+		$('.user-list ul').append('<li>' + user + '</li>');
+	});
+
+// using _.each to get key pairs value, and inject into the DOM
+	_.each(arg, function(data){
+		$('.wins').append('<li>' + data[0] + '</li>');
+	})
+}
