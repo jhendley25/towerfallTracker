@@ -1,4 +1,4 @@
-var towerfallDataByUser = {
+towerfallDataByUser = {
 
   "user1" : {
     "name" : "jake",
@@ -16,7 +16,7 @@ var towerfallDataByUser = {
 
 }
 
-var towerfallDataTruncated = {
+towerfallDataTruncated = {
   "jake" : 112,
   "ari" : 11,
   "mason" : 169
