@@ -23,5 +23,7 @@ is the same as the totalGamesPlayed(), just optimized
 
 ## future functions
 - math.random to display user scores
+- edit + add function: user created editability + creationism
 
+## random facts learned
 map can be used to create a duplicate array

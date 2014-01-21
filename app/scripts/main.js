@@ -1,8 +1,12 @@
 $(function(){
 	console.log('this shit is ready!!!')
 	// stickEmIn(towerfallDataByUser);
-	// stickEmInWithUnderscore(towerfallDataTruncated);
-	console.log(totalGamesPlayed());
+	stickEmInWithUnderscore(towerfallDataTruncated);
+	totalGamesPlayed();
+
+	$('.btn.btn-primary').click(function(){
+		addUser()
+	})
 
 })
 
@@ -27,6 +31,28 @@ function stickEmInWithUnderscore(arg) {
 }
 
 function totalGamesPlayed(){
-	var totalGames =  _.reduce(_.map(towerfallGlobalData.game_count, function(value, key){return value;}), function(memo, num){return memo + num;})
-	
+	var totalGames =  _.reduce(_.map(towerfallGlobalData.game_count, function(value, key){return value;}), function(memo, num){return memo + num;});
+	$('#weekly-games').append('<li>' + totalGames + '</li>');
 }
+
+function addUser(){
+	$('.user-list ul').append('<input class="newUser" placeholder="sup dog">')
+	$('.btn.btn-primary').remove();
+	$('.user-list').append("<button class='btn btn-success submit'>DO IT!</button>");
+	$('.submit').click(function(){
+		newUserData();
+	})
+}
+
+function newUserData(){
+	$('.user-list ul').append('<li>' + $('.newUser').val() + '</li>');
+	$('.newUser').remove();
+
+}
+
+
+
+
+
+
+
