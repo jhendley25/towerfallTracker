@@ -8,13 +8,16 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 section {
     display: inline-block;
     vertical-align: top;
-    margin: 0 40px;
+    margin: 0 30px;
 }
 
 dt, dd {
     text-align: left;
 }
 
+.left {
+    text-align: left;
+}
 
 
 
