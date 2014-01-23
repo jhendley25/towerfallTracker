@@ -3,7 +3,7 @@ $(function(){
 	// stickEmIn(towerfallDataByUser);
 	stickEmInWithUnderscore(towerfallDataTruncated);
 	totalGamesPlayed();
-	thisGuy();
+	addUser();
 
 })
 
@@ -23,7 +23,7 @@ function stickEmInWithUnderscore(arg) {
 
 // using _.each to get key pairs value, and inject into the DOM
 	_.each(arg, function(data){
-		$('.wins ul').append('<li>' + data[0] + '</li>');
+		$('.wins ul').append('<li class="dudes">' + data[0] + '</li>');
 	})
 }
 
@@ -32,26 +32,23 @@ function totalGamesPlayed(){
 	$('#weekly-games').append('<li>' + totalGames + '</li>');
 }
 
-function addUser(){
+function addInputs(){
 	$('.user-list ul').append('<input class="newUser this-guy" placeholder="sup dog">');
 	$('.wins ul').append('<input class="newScore this-guy" placeholder="give it to me baby">');
-	// $('.btn.btn-primary').click(function(){
-	// })
 }
 
 function newUserData(){
 	$('.user-list ul').append('<li>' + $('.newUser').val() + '</li>');
-	$('.wins ul').append('<li class="poo">' + $('.newScore').val() + '<li>');
-	$('.newUser').remove();
-	$('.newScore').remove();
+	$('.wins ul').append('<li class="poo">' + $('.newScore').val() + '</li>');
+	$('.newUser, .newScore').remove();
 		
 	console.log('????');
 }
 
-function thisGuy(){
+function addUser(){
 	$('.btn.btn-primary').click(function(){
 		if($('.this-guy').length === 0){
-			addUser()
+			addInputs()
 		} else {
 			newUserData();
 		}
