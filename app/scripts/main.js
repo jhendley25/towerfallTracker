@@ -13,8 +13,9 @@ $(function(){
 	// stickEmIn(towerfallDataByUser);
 	// stickEmInWithUnderscore(towerfallDataTruncated);
 	totalGamesPlayed();
-	addUser();
+	// addUser();
 	editButton();
+	new CreateUser();
 
 })
 
@@ -45,35 +46,6 @@ function stickEmInWithUnderscore(arg) {
 function totalGamesPlayed(){
 	var totalGames =  _.reduce(_.map(towerfallGlobalData.game_count, function(value, key){return value;}), function(memo, num){return memo + num;});
 	$('#weekly-games').append('<li>' + totalGames + '</li>');
-}
-
-function addInputs(){
-	$('.goes-here').append('<input class="newUser add-user" placeholder="sup dog">');
-	$('.goes-here').append('<input class="newScore add-user" placeholder="give it to me baby">');
-}
-
-function newUserData(){
-	// $('.goes-here').append('<li>' + '<button class="btn btn-danger edit">edit</button>' + ' ' + $('.newUser').val() + '</li>');
-	// $('.goes-here').append('<li>' + '<button class="btn btn-danger edit">edit</button>' + ' ' + $('.newScore').val() + '</li>');
-
-	var newUser = new UserModel({
-		name: $('.newUser').val(),
-		wins: $('.newScore').val()
-	});
-
-	users.add(newUser)
-	$('.newUser, .newScore').remove();
-	console.log('????');
-}
-
-function addUser(){
-	$('.btn.btn-primary').click(function(){
-		if($('.add-user').length === 0){
-			addInputs()
-		} else {
-			newUserData();
-		}
-	})
 }
 
 function editButton(){

@@ -2,7 +2,7 @@ Users = Backbone.Collection.extend({
 
     initialize: function(){
       this.on('add', function(model){
-        new DisplayUser({model: model})
+        new DisplayUser({model: model});
       })
       console.log('wtf?');
     },
