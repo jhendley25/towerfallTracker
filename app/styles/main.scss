@@ -19,7 +19,20 @@ dt, dd {
     text-align: left;
 }
 
+.edit {
+    padding: 0 !important;
+    font-size: 15px !important;
+}
 
+
+.goes-here, .goes-here ul {
+    list-style-type: none;
+    text-align: left;
+}
+
+.inline {
+    display: inline-block;
+}
 
 
 
