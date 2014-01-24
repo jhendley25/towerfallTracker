@@ -17,5 +17,4 @@ DisplayUser = Backbone.View.extend({
 		this.$el.append(this.template({model: this.model}));
 	},
 
-
 })

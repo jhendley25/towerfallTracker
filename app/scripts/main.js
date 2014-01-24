@@ -1,3 +1,13 @@
+// COLLECTION INSTANTIATION
+var users = new Users();
+
+/* this is taking the stubbed out data from towerfallDataByUser, 
+use _.map to create an array of that obj + returning the objs inside as the variable 'data', 
+which is being passed thru users' add method */
+var data = _.map(towerfallDataByUser, function(value, key){ return value});
+users.add(data);
+
+// DOCUMENT READY
 $(function(){
 	// console.log('this shit is ready!!!')
 	// stickEmIn(towerfallDataByUser);
@@ -8,6 +18,8 @@ $(function(){
 
 })
 
+
+// BEGIN FUNCTIONS
 function stickEmIn(data){
 // using underscore to foreach over data nested in an object, referenced in global-data.js
 	_.each(data, function(user){
@@ -36,15 +48,21 @@ function totalGamesPlayed(){
 }
 
 function addInputs(){
-	$('.user-list ul').append('<input class="newUser add-user" placeholder="sup dog">');
-	$('.wins ul').append('<input class="newScore add-user" placeholder="give it to me baby">');
+	$('.goes-here').append('<input class="newUser add-user" placeholder="sup dog">');
+	$('.goes-here').append('<input class="newScore add-user" placeholder="give it to me baby">');
 }
 
 function newUserData(){
-	$('.user-list ul').append('<li>' + '<button class="btn btn-danger edit">edit</button>' + ' ' + $('.newUser').val() + '</li>');
-	$('.wins ul').append('<li>' + '<button class="btn btn-danger edit">edit</button>' + ' ' + $('.newScore').val() + '</li>');
+	// $('.goes-here').append('<li>' + '<button class="btn btn-danger edit">edit</button>' + ' ' + $('.newUser').val() + '</li>');
+	// $('.goes-here').append('<li>' + '<button class="btn btn-danger edit">edit</button>' + ' ' + $('.newScore').val() + '</li>');
+
+	var newUser = new UserModel({
+		name: $('.newUser').val(),
+		wins: $('.newScore').val()
+	});
+
+	users.add(newUser)
 	$('.newUser, .newScore').remove();
-		
 	console.log('????');
 }
 
@@ -65,8 +83,4 @@ function editButton(){
 	})
 }
 
-// COLLECTION INSTANTIATION
-var users = new Users();
-var data = _.map(towerfallDataByUser, function(value, key){ return value});
-users.add(data);
 

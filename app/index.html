@@ -86,18 +86,9 @@ new user score goes here
 ======================== -->
 
         <script type="text/template" id="user">
-            <ul>
-                <li class="inline">
-                    <button class="btn btn-danger edit">edit</button>
-                </li>
-                <li class="inline">
-                    <div class="user"><%= model.get('name') %></div>
-                </li>
-                <li class="inline">
-                    <div class="score"><%= model.get('wins') %></div>
-                </li>
-            </ul>
-            
+                <button class="btn btn-danger edit inline">edit</button>
+                <div class="user inline"><%= model.get('name') %></div>
+                <div class="score inline"><%= model.get('wins') %></div>
         </script>
 
 

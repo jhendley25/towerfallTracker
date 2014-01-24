@@ -24,7 +24,28 @@ is the same as the totalGamesPlayed(), just optimized
 
 #### addUser()
 - calls addInputs() + newUserData() to put new data in the DOM
+##### original functions
 
+		function newUserData(){
+		$('.goes-here').append('<li>' + '<button class="btn btn-danger edit">edit</button>' + ' ' + $('.newUser').val() + '</li>');
+		$('.goes-here').append('<li>' + '<button class="btn btn-danger edit">edit</button>' + ' ' + $('.newScore').val() + '</li>');
+		$('.newUser, .newScore').remove();
+		}
+		
+		function addInputs(){
+		$('.goes-here').append('<input class="newUser add-user" placeholder="sup dog">');
+		$('.goes-here').append('<input class="newScore add-user" placeholder="give it to me baby">');
+		}
+		
+		function addUser(){
+		$('.btn.btn-primary').click(function(){
+		if($('.add-user').length === 0){
+			addInputs()
+		} else {
+			newUserData();
+				}
+			})
+		}
 ## future functions
 - math.random to display user scores
 - edit + add function: user created edit-ability + creationism
