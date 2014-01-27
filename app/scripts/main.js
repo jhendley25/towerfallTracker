@@ -14,7 +14,7 @@ $(function(){
 	// stickEmInWithUnderscore(towerfallDataTruncated);
 	totalGamesPlayed();
 	// addUser();
-	editButton();
+	// editButton();
 	new CreateUser();
 
 })
@@ -48,11 +48,5 @@ function totalGamesPlayed(){
 	$('#weekly-games').append('<li>' + totalGames + '</li>');
 }
 
-function editButton(){
-	$('.edit').click(function(){
-		addInputs();
-		console.log('suff');
-	})
-}
 
 

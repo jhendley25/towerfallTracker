@@ -3,6 +3,10 @@ DisplayUser = Backbone.View.extend({
 
 	tagName: 'li',
 
+	events: {
+		'click .edit'		: 'editButton'
+	},
+
 	initialize: function(){
 		$('.goes-here').append(this.$el);	
 		this.render();
@@ -11,6 +15,18 @@ DisplayUser = Backbone.View.extend({
 	render: function(){
 		this.$el.append(this.template({model: this.model}));
 	},
+
+	editButton: function(){
+		$(this.$el.children('.user, .score')).html('');
+		console.log(this.$el.children().hasClass('.score'));
+		console.log(this.$el.children('.score'));
+		console.log(this.$el.children());
+
+
+		this.$el.append('<input class="editing" placeholder="' + this.model.get("name") + '">');
+		this.$el.append('<input class="editing" placeholder="' + this.model.get("wins") + '">');
+		// console.log('stuff');
+	}
 })
 
 CreateUser = Backbone.View.extend({
