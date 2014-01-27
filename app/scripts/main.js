@@ -13,8 +13,6 @@ $(function(){
 	// stickEmIn(towerfallDataByUser);
 	// stickEmInWithUnderscore(towerfallDataTruncated);
 	totalGamesPlayed();
-	// addUser();
-	// editButton();
 	new CreateUser();
 
 })
