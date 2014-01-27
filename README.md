@@ -48,7 +48,10 @@ is the same as the totalGamesPlayed(), just optimized
 		}
 ## future functions
 - math.random to display user scores
-- edit + add function: user created edit-ability + creationism
+- edit + add function: user created edit-ability + creationism PARTIALLY DONE
+	- validation
+	- press `return/enter` to update instead of hitting the button again
+	
 
 ## random facts learned
 map can be used to create a duplicate array

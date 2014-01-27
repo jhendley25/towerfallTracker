@@ -17,17 +17,34 @@ DisplayUser = Backbone.View.extend({
 	},
 
 	editButton: function(){
+		var that = this;
 		$(this.$el.children('.user, .score')).html('');
-		console.log(this.$el.children().hasClass('.score'));
-		console.log(this.$el.children('.score'));
-		console.log(this.$el.children());
+		$(this.$el.children('.edit')).html('save').removeClass('btn-danger').addClass('btn-success');
 
+		var editInputs = $(this.$el.children('.editing'))
 
-		this.$el.append('<input class="editing" placeholder="' + this.model.get("name") + '">');
-		this.$el.append('<input class="editing" placeholder="' + this.model.get("wins") + '">');
-		// console.log('stuff');
+		if(editInputs.length === 0) {
+			this.$el.append('<input class="editing editUser" placeholder="' + this.model.get("name") + '">');
+			this.$el.append('<input class="editing editScore" placeholder="' + this.model.get("wins") + '">');	
+		} else {
+			var editedUser = {
+				name: $('.editUser').val(),
+				wins: $('.editScore').val()
+			}
+
+			this.model.set(editedUser);
+
+			$(editInputs).remove();
+			$(this.$el.children('.edit')).html('edit').removeClass('btn-success').addClass('btn-danger');
+
+			console.log('edited user name = ', editedUser.name);
+
+			$(this.$el.children('.user').html(editedUser.name));
+			$(this.$el.children('.score').html(editedUser.wins));
+		}
 	}
 })
+
 
 CreateUser = Backbone.View.extend({
 	/* this isn't referencing a template and has no render, because the addUser method, 
