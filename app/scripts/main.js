@@ -1,8 +1,8 @@
 // COLLECTION INSTANTIATION
 var users = new Users();
 
-/* this is taking the stubbed out data from towerfallDataByUser, 
-use _.map to create an array of that obj + returning the objs inside as the variable 'data', 
+/* this is taking the stubbed out data from towerfallDataByUser,
+use _.map to create an array of that obj + returning the objs inside as the variable 'data',
 which is being passed thru users' add method */
 var data = _.map(towerfallDataByUser, function(value, key){ return value});
 users.add(data);

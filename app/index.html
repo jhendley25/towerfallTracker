@@ -17,6 +17,8 @@
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
+
+        <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.16.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 10]>
@@ -107,7 +109,10 @@ new user score goes here
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>
-
+        <!-- parse init -->
+        <script>
+        Parse.initialize("uj4DSIoSUzYLDYxp81AfW9aDIrNY31riEJFHEBK7", "iyNNU3ijP8JM53pDL1wzpbvov346TrKhQqsXBzNx");
+        </script>
         <!-- build:js scripts/main.js -->
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
